@@ -14,9 +14,7 @@ import com.bookstore.domain.User;
 @Entity
 @Table(name="user_role")
 public class UserRole {
-	public UserRole() {
-		
-	}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long userRoleId;
@@ -29,6 +27,7 @@ public class UserRole {
 	@JoinColumn(name="role_id")
 	private Role role;
 	
+	public UserRole(){}
 	
 	public UserRole(User user, Role role) {
 		this.user = user;
