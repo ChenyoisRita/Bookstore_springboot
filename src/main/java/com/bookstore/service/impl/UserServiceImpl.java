@@ -61,11 +61,17 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
+	public User findById(Long id){
+		return userRepository.findById(id).orElse(null);
+	}
+	
+	@Override
 	public User findByEmail (String email) {
 		return userRepository.findByEmail(email);
 	}
 	
 	@Override
+//	@Transactional
 	public User createUser(User user, Set<UserRole> userRoles){
 		User localUser = userRepository.findByUsername(user.getUsername());
 		
@@ -142,12 +148,6 @@ public class UserServiceImpl implements UserService{
 				userShippingRepository.save(userShipping);
 			}
 		}
-	}
-
-	@Override
-	public User findById(Long id) {
-		// TODO Auto-generated method stub
-		return userRepository.findById(id).orElse(null);
 	}
 
 }

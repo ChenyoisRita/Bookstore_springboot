@@ -113,6 +113,8 @@ public class Order {
 	public void setPayment(Payment payment) {
 		this.payment = payment;
 	}
+	
+	
 
 	public BillingAddress getBillingAddress() {
 		return billingAddress;
